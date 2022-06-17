@@ -4,7 +4,7 @@
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
-  
+
   <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
     <p align="center">
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
@@ -32,6 +32,15 @@
 $ npm install
 ```
 
+## Database
+
+- using Postgres Database
+- connection params are defined in `.env` file
+
+### Prisma
+
+- to run migrations: `npx prisma migrate dev --name init`
+
 ## Running the app
 
 ```bash
@@ -44,6 +53,14 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+## To init the project
+
+- clone `.env.default` file and rename it to `.env`
+- add the proper env variables
+- make sure to create a proper database (name and username same as `DATABASE_URL`)
+- run `npm start run:dev` for local-development
+- run migration command `npx prisma migrate dev`
 
 ## Test
 
@@ -70,4 +87,4 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## License
 
-  Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
