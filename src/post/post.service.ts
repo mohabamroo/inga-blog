@@ -18,15 +18,12 @@ export class PostService {
     });
     try {
       const airtableRes = await this.airtableService.createPostRecord(post);
-      console.log(
-        '🚀 ~ file: post.service.ts ~ line 21 ~ PostService ~ create ~ airtableRes',
-        airtableRes,
-      );
+
       console.log('saved in airtable');
     } catch (err) {
       console.error('Failed to save on airtable');
     }
-    // TODO: airtable integration
+
     return post;
   }
 
@@ -53,7 +50,9 @@ export class PostService {
       take: Number(take) || 10,
       skip: Number(skip) || undefined,
       cursor,
-
+      include: {
+        author: true,
+      },
       orderBy: {
         createdAt: orderBy,
       },

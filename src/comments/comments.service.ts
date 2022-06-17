@@ -32,6 +32,9 @@ export class CommentsService {
         ...or,
       },
       take: Number(take) || 10,
+      include: {
+        author: true,
+      },
       skip: Number(skip) || undefined,
       orderBy: {
         createdAt: orderBy,
